@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Patholigist Assistant</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Pathologist Assistant</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14614,7 +14614,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this assignment, the target is to expplore the approach and possibility to generate a model of patholigist assistant. The expectation is that the assistant can automatically answer certain questions based on the scanned image from X-ray, CT, MRI and other kind of source.
+<p>In this assignment, the target is to explore the approach and possibility to generate a model of pathologist assistant. The expectation is that the assistant can automatically answer certain questions based on the scanned image from X-ray, CT, MRI and other kind of source.
 The problem is coming from a challenge from the website <a href="https://grand-challenge.org/">https://grand-challenge.org/</a>, the link of the challenge is <a href="https://pathvqachallenge.grand-challenge.org/PathVQA_challenge/">https://pathvqachallenge.grand-challenge.org/PathVQA_challenge/</a>. All the data is provided by the owner of the challenge from <a href="https://github.com/UCSD-AI4H/PathVQA/tree/master/data">https://github.com/UCSD-AI4H/PathVQA/tree/master/data</a>.
 @article{he2020pathvqa,
   title={PathVQA: 30000+ Questions for Medical Visual Question Answering},
@@ -14795,11 +14795,11 @@ The problem is coming from a challenge from the website <a href="https://grand-c
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The table includes raw data of image file, questions and answers. To continue, the data needs to be cleaned up and preprocessed.
-To generate automatical answer based on image and question, we need to extract the feature from the image and the keyword from the questions and answers. To similify the problem area, in this assignmnet, the plan is to start with &quot;yes/no&quot; answers.
-The data cleaning and  preprocessing includes:</p>
+<p>The table includes raw data of image file, questions and answers, which needs to be cleaned up and preprocessed prior to the next step.
+To generate automatic answer based on image and question, we need to extract the feature from the image and the keyword from the questions and answers. To simplify the problem area, in this assignment, the plan is to start with &quot;yes/no&quot; answers.
+The data cleaning and preprocessing includes:</p>
 <ol>
-<li>Formalize the image file for sequece based index</li>
+<li>Formalize the image file for sequence based index</li>
 </ol>
 
 </div>
@@ -14846,7 +14846,7 @@ The data cleaning and  preprocessing includes:</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol start="2">
-<li>Remove the samples with answers being other than &quot;yes/no&quot;, and map yes to 1, no to 0.</li>
+<li>Remove the samples with answers being other than &quot;yes/no&quot;, and map 'yes' to 1, 'no' to 0.</li>
 </ol>
 
 </div>
@@ -14948,7 +14948,7 @@ The data cleaning and  preprocessing includes:</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol start="4">
-<li>Extract features from images. Considering there're many different kind of features to identify/categorize the image, the plan was to select two kinds of features for initial attempt: entropy and edge detection. But after including the two types of features, the complexity is too high to run the model on laptop computer, the calculation cannot be completed even for more than 1 day. So, the ultimate model can only be based on the features without edge detection.</li>
+<li>Extract features from images. Considering there are many kinds of features to identify/categorize the image, the plan was to select two kinds of features for initial attempt: entropy and edge detection. But after including the two types of features, the complexity is too high to run the model on laptop computer, the calculation cannot be completed even for more than 1 day. So, the ultimate model can only be based on the features without edge detection.</li>
 </ol>
 
 </div>
@@ -15421,7 +15421,7 @@ The data cleaning and  preprocessing includes:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As the target, the 'Answers' is a binary class with value 1 and 0, the criteria are contious value, considering the compelexisty of the data and the number of the data is not big enough, the ensemble model RandomForest is chosen to fit the task. To find the best parameters, the GridSearchCV function is adopted further.</p>
+<p>As the target, the 'Answers' is a binary class with value 1 and 0, the criteria are continuous value, considering the complexity of the data and the number of the data is not big enough, the ensemble model RandomForest is chosen to fit the task. To find the best parameters, the GridSearchCV function is adopted further.</p>
 
 </div>
 </div>
@@ -15572,10 +15572,10 @@ The data cleaning and  preprocessing includes:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The ultimate testing score is only about 52%, it cannot meet the requirement from the real world. The reason of the low actuaccy could be because of the following factors:</p>
+<p>The ultimate testing score is only about 52%, it cannot meet the requirement from the real world. The reason of the low accuracy could be because of the following factors:</p>
 <ol>
-<li>Too less data</li>
-<li>The imaging processing part contributes too less information, which means it needs much more calculation on image part, but there is not enough computing resource for the assignment.</li>
+<li>Too fewer data</li>
+<li>The imaging processing part contributes insuficient information, which means it needs much more calculation on image part, but there is not enough computing resource for the assignment.</li>
 </ol>
 <p>To complete the challenge, more work on collecting data and more importantly, the imaging processing part needs to be improved.</p>
 
